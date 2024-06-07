@@ -29,7 +29,7 @@ function App() {
   return (
     <div>
       <h1>My Todo List</h1>
-      <Todos todos = {todos} />
+      <Todos todos={todos} />
     </div>
   )
 }
