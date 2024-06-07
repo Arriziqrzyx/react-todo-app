@@ -1,7 +1,7 @@
 import React from 'react'
 
 function TodoItem({title}) {
-  return <p>{title}</p>;
+  return <p className="todo-item">{title}</p>;
 }
 
 export default TodoItem
