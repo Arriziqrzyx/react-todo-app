@@ -24,12 +24,22 @@ const DUMMY = [
 function App() {
   const [todos, setTodos] = useState(DUMMY);
 
-  console.log(todos);
+  const toggleCompleted = (id) => {
+    const updateTodos = todos.map(todo => {
+      if (todo.id === id) {
+        todo.completed = !todo.completed
+      }
+      return todo;
+    })
+
+    setTodos(updateTodos);
+    console.log('toggle dipanggil', id)
+  }
 
   return (
     <div>
       <h1>My Todo List</h1>
-      <Todos todos={todos} />
+      <Todos todos={todos} toggleCompleted={toggleCompleted} />
     </div>
   )
 }

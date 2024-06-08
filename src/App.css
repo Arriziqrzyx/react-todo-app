@@ -6,14 +6,29 @@
 }
 
 h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
   text-decoration: underline;
 }
 
+.todo-item-container {
+  display: flex;
+  align-items: center;
+}
+
+.todo-checkbox {
+  width: 27px;
+  height: 27px; 
+}
+
 .todo-item {
-  padding: 10px;
-  margin: 15px 0;
+  width: 450px;
+  padding: 10px 20px;
+  margin: 10px 20px;
   background: linear-gradient(45deg, #644EFC, #9E55FB); 
   color: #ddd; 
   border-radius: 7px;
   font-weight: 600;
+  flex-grow: 1;
+  text-align: center;
 }
