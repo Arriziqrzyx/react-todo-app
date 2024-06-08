@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './App.css'
 import Todos from './component/Todos';
+import TodoForm from './component/TodoForm';
 
 
 const DUMMY = [
@@ -33,7 +34,6 @@ function App() {
     })
 
     setTodos(updateTodos);
-    console.log('toggle dipanggil', id);
   };
 
   const deleteTodo = (id) => {
@@ -43,9 +43,25 @@ function App() {
     setTodos(filterDeleted);
   };
 
+  const addTodo = (title) => {
+    if (title === '') {
+      return;
+    }
+
+    const newTodo = {
+      id: todos.length + 1,
+      title: title,
+      completed: false,
+    }
+
+    const updatedTodo = todos.concat(newTodo)
+    setTodos(updatedTodo);
+  };
+
   return (
     <div>
       <h1>My Todo List</h1>
+      <TodoForm addTodo={addTodo} />
       <Todos 
       todos={todos} 
       toggleCompleted={toggleCompleted} 

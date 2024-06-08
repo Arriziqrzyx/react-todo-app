@@ -49,9 +49,47 @@ h1 {
   font-size: 31px;
 }
 
+.todo-form {
+  margin-bottom: 20px;
+}
+
+.todo-input {
+  padding: 10px;
+  border: 2px solid #644EFC; 
+  border-radius: 5px;
+  font-size: 16px;
+  flex-grow: 1; 
+  margin-right: 10px; 
+  width: 450px;
+  background-color: #3a3a3a;
+}
+
+.todo-submit {
+  background-color: #644EFC; 
+  color: #fff; 
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  height: 40px;
+  width: 50px;
+}
+
+.todo-submit:hover {
+  background-color: #9E55FB; 
+}
+
 @media all and (max-width: 1000px) {
   .todo-item {
     width: 50%;
+  }
+
+  .todo-input {
+    width: 50%;
+  }
+
+  .todo-submit {
+    width: 40px;
   }
 }
 
