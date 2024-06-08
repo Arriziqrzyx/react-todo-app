@@ -25,7 +25,7 @@ function App() {
   const [todos, setTodos] = useState(DUMMY);
 
   const toggleCompleted = (id) => {
-    const updateTodos = todos.map(todo => {
+    const updateTodos = todos.map((todo) => {
       if (todo.id === id) {
         todo.completed = !todo.completed
       }
@@ -33,15 +33,26 @@ function App() {
     })
 
     setTodos(updateTodos);
-    console.log('toggle dipanggil', id)
-  }
+    console.log('toggle dipanggil', id);
+  };
+
+  const deleteTodo = (id) => {
+    const filterDeleted = todos.filter((todo) => {
+      return todo.id != id;
+    });
+    setTodos(filterDeleted);
+  };
 
   return (
     <div>
       <h1>My Todo List</h1>
-      <Todos todos={todos} toggleCompleted={toggleCompleted} />
+      <Todos 
+      todos={todos} 
+      toggleCompleted={toggleCompleted} 
+      deleteTodo={deleteTodo}
+      />
     </div>
-  )
+  );
 }
 
 export default App

@@ -17,18 +17,52 @@ h1 {
 }
 
 .todo-checkbox {
-  width: 27px;
-  height: 27px; 
+  width: 30px;
+  height: 30px;
+  cursor: pointer; 
 }
 
 .todo-item {
-  width: 450px;
-  padding: 10px 20px;
-  margin: 10px 20px;
+  width: 500px;
+  padding: 20px 25px;
+  margin: 15px 30px;
   background: linear-gradient(45deg, #644EFC, #9E55FB); 
   color: #ddd; 
   border-radius: 7px;
   font-weight: 600;
   flex-grow: 1;
   text-align: center;
+}
+
+.todo-delete {
+  width: 31px;
+  height: 31px;
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.todo-delete i {
+  font-size: 31px;
+}
+
+@media all and (max-width: 1000px) {
+  .todo-item {
+    width: 50%;
+  }
+}
+
+@media all and (max-width: 670px) {
+  .todo-item {
+    width: 90%; 
+    margin: 10px 15px; 
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
 }

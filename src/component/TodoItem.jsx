@@ -1,8 +1,8 @@
 import React from 'react'
 
-function TodoItem({ todos, toggleCompleted }) {
+function TodoItem(todo) {
   const getTodoTitleStyle = () => {
-    if(todos.completed === true) {
+    if(todo.completed === true) {
       return {textDecoration: 'line-through'};
     } else {
       return {textDecoration: 'none'};
@@ -11,8 +11,9 @@ function TodoItem({ todos, toggleCompleted }) {
 
   return (
     <div className="todo-item-container">
-      <input type="checkbox" className="todo-checkbox" onChange={() => toggleCompleted(todos.id)} />
-      <p style={getTodoTitleStyle()} className="todo-item">{todos.title}</p>
+      <input type="checkbox" className="todo-checkbox" onChange={() => todo.toggleCompleted(todo.id)} />
+      <p style={getTodoTitleStyle()} className="todo-item">{todo.title}</p>
+      <button className='todo-delete' onClick={() => todo.deleteTodo(todo.id)}><i className="uil uil-trash-alt"></i></button>
     </div>
     
   );
