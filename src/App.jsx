@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import React, { useState, createContext } from 'react'
 import './App.css'
-import Todos from './component/Todos';
-import TodoForm from './component/TodoForm';
+import Todos from './component/Todos'
+import TodoForm from './component/TodoForm'
 
 
 const DUMMY = [
@@ -21,6 +21,8 @@ const DUMMY = [
     completed: false,
   },
 ];
+
+export const TodoContext = createContext()
 
 function App() {
   const [todos, setTodos] = useState(DUMMY);
@@ -59,16 +61,19 @@ function App() {
   };
 
   return (
-    <div>
-      <h1>My Todo List</h1>
-      <TodoForm addTodo={addTodo} />
-      <Todos 
-      todos={todos} 
-      toggleCompleted={toggleCompleted} 
-      deleteTodo={deleteTodo}
-      />
-    </div>
+    <TodoContext.Provider value={{ toggleCompleted, deleteTodo }}>
+      <div>
+        <h1>My Todo List</h1>
+        <TodoForm addTodo={addTodo} />
+        <Todos 
+        todos={todos} 
+        // toggleCompleted={toggleCompleted} 
+        // deleteTodo={deleteTodo}
+        />
+      </div>
+    </TodoContext.Provider>
   );
 }
 
 export default App
+
